@@ -1,23 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace LOBSTER
 {
-    public interface IGeneratedItemStat<TGroup, TStat> where TGroup : struct, IComparable where TStat : struct, IComparable
-    {
-        
-    }
-
-    public interface IGeneratedItem<TItemGroup, TItemType, TGroup, TStat> where TItemGroup : struct, IComparable where TItemType : struct, IComparable where TGroup : struct, IComparable where TStat : struct, IComparable
-    {
-        TItemGroup ItemGroup { get; set; }
-        TItemType ItemType { get; set; }
-        List<IGeneratedItemStat<TGroup, TStat>> GetStats();
-        void AddStat(TGroup group, TStat stat, float value);
-        float GetStat(TGroup group, TStat stat);
-    }
     public class ItemGenerator<TItemGroup, TItemType, TGroup, TStat> where TItemGroup : struct, IComparable where TItemType : struct, IComparable where TGroup : struct, IComparable where TStat : struct, IComparable
     {
         private IBlueprintLoader<TItemGroup, TItemType, TGroup, TStat> _blueprintLoader;
@@ -49,10 +35,5 @@ namespace LOBSTER
         }
 
 
-    }
-
-    public interface IBlueprintLoader<TItemGroup, TItemType, TGroup, TStat> where TItemGroup : struct, IComparable where TItemType : struct, IComparable where TGroup : struct, IComparable where TStat : struct, IComparable
-    {
-        IBlueprint<TItemGroup, TItemType, TGroup, TStat> GetBlueprint(TItemGroup itemGroup, TItemType itemType);
     }
 }

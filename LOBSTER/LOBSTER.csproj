@@ -39,6 +39,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBlueprint.cs" />
+    <Compile Include="IBlueprintLoader.cs" />
+    <Compile Include="IBlueprintStat.cs" />
+    <Compile Include="IGeneratedItem.cs" />
+    <Compile Include="IGeneratedItemStat.cs" />
     <Compile Include="ItemGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
