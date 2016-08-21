@@ -5,7 +5,13 @@ using System.Text;
 
 namespace LOBSTER
 {
-    class IBlueprint
+    public interface IBlueprint<out TItemGroup, out TItemType, in TGroup, in TStat> where TItemGroup : struct, IComparable where TItemType : struct, IComparable where TGroup : struct, IComparable where TStat : struct, IComparable
     {
+        TItemGroup GetGroup();
+        TItemType GetItemType();
+        float GetMin(TGroup group, TStat stat);
+        float GetMax(TGroup group, TStat stat);
+
+
     }
 }
